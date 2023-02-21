@@ -5,6 +5,7 @@ class Calculator {
 
     }
 
+    // adding some comments
     int add(int a , int b){
         return a + b;
     }
@@ -66,6 +67,4 @@ class Calculator {
 
         return null;
     }
-
-
 }
