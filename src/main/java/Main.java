@@ -1,31 +1,44 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         Calculator calculator = new Calculator();
+        int index = 6;
 
-        String operation = args[0];
-        int firstValue = Integer.parseInt(args[1]);
-        int secondValue = 0;
-        if (args.length == 3) {
-            secondValue = Integer.parseInt(args[2]);
+        System.out.println("Welcome to app");
+        while (index >= 0) {
+            System.out.println("Enter input: ");
+
+            String input = new Scanner(System.in).nextLine();
+            Scanner scanner = new Scanner(input);
+
+            String operation = scanner.next();
+            int firstValue = Integer.parseInt(scanner.next());
+            int secondValue = 0;
+            if (scanner.hasNext()) {
+                secondValue = Integer.parseInt(scanner.next());
+            }
+
+            if (operation.equals("add")) {
+                System.out.println(calculator.add(firstValue, secondValue));
+            }
+            if (operation.equals("sub")) {
+                System.out.println(calculator.subtract(firstValue, secondValue));
+            }
+            if (operation.equals("multiply")) {
+                System.out.println(calculator.multiply(firstValue, secondValue));
+            }
+            if (operation.equals("divide")) {
+                System.out.println(calculator.divide(firstValue, secondValue));
+            }
+            if (operation.equals("fibonacci")) {
+                System.out.println(calculator.fibonacciNumberFinder(firstValue));
+            }
+            if (operation.equals("binary")) {
+                System.out.println(calculator.intToBinaryNumber(firstValue));
+            }
+            index--;
         }
 
-        if (operation.equals("add")) {
-            System.out.println(calculator.add(firstValue, secondValue));
-        }
-        if (operation.equals("sub")) {
-            System.out.println(calculator.subtract(firstValue, secondValue));
-        }
-        if (operation.equals("multiply")) {
-            System.out.println(calculator.multiply(firstValue, secondValue));
-        }
-        if (operation.equals("divide")) {
-            System.out.println(calculator.divide(firstValue, secondValue));
-        }
-        if (operation.equals("fibonacci")) {
-            System.out.println(calculator.fibonacciNumberFinder(firstValue));
-        }
-        if (operation.equals("binary")) {
-            System.out.println(calculator.intToBinaryNumber(firstValue));
-        }
     }
 }
